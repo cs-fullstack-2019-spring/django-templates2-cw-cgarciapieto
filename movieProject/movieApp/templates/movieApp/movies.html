@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        Movies
+        {% endblock title %}
+    </title>
+</head>
+<body>
+
+
+{% block content %}
+<!--table that displays links to pages with corect info displayed-->
+<table>
+    <tr>
+        <th>
+            {% block header %}
+            List of Movies
+            {% endblock header %}
+        </th>
+    </tr>
+
+    {% for movie in movie_list %}
+    {{ movie_details }}
+        <tr>
+            <td>
+                <a href="{% url 'base' %}">movies</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'movie_details' %}">Movie Details</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="{% url 'movie_synopsis' %}">Movie Synopsis</a>
+            </td>
+        </tr>
+
+    {% endfor  %}
+</table>
+{% endblock content %}
+
+
+</body>
+</html>

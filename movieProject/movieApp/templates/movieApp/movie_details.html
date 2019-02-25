@@ -1,0 +1,14 @@
+{% extends 'movieApp/movies.html' %}
+
+{% block title %}List of details{% endblock %}
+{% block header %}List of Movie Details {% endblock %}
+
+{% block content %}
+{% for movie in movie_list %}
+
+<p>{{ movies }}</p>
+<a href="{% url 'base' %}">movies</a>
+<a href="{% url 'movie_synopsis' %}">Movie Synopsis</a>
+
+{% endfor %}
+{% endblock %}
