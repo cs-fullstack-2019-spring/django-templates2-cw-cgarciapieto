@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from django.shortcuts import HttpResponse
 movies = [
     {
         'movie_id': 0,
@@ -27,13 +27,16 @@ movies = [
 
 def index(request):
     print(movies)
-    return render(request, 'movieApp/movies.html',{'movie_list': movies}  )
+    return HttpResponse("test")
+    # return render(request, 'movieApp/movies.html',{'movie_list': movies}  )
 
 def movie_details(request):
     print(movies)
+    return  HttpResponse("test2")
 
-    return render(request, 'movieApp/movie_details.html', {'movies_details': movies })
+    # return render(request, 'movieApp/movie_details.html', {'movies_details': movies })
 
 def movie_synopsis(request):
     print(movies)
-    return render(request, 'movieApp/movie_synopsis.html', {'movie_synopsis': movies })
+    return  HttpResponse("test3")
+    # return render(request, 'movieApp/movie_synopsis.html', {'movie_synopsis': movies })
